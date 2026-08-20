@@ -9,7 +9,7 @@
 - **Modern OpenGL** – leverages shader-based rendering (GLSL) for flexible graphics pipelines.
 - **Built-in shaders** – includes PBR, Phong, Unlit, and Blit shaders out of the box.
 - **Model & texture loading** – supports common formats through Assimp and StbImage.
-- **Text rendering** – bitmap font support with a built-in renderer.
+- **Text rendering** – font support with a built-in renderer.
 - **Lighting system** – directional, point, and spot lights.
 - **Camera helpers** – orthographic and perspective cameras.
 - **Post‑processing effects** – basic pipeline for screen-space effects.
