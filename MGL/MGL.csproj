@@ -4,15 +4,17 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        
+        <PackageId>MadbyesGameLibrary</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>madbye</Authors>
+  	<Company>madbye</Company>
+	<Description>Madbye's Game Library</Description>
+	<PackageTags>tag1;tag2</PackageTags>
     </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
+    
 
     <ItemGroup>
       <PackageReference Include="AssimpNet" Version="5.0.0-beta1" />
@@ -46,5 +48,5 @@
       <None Remove="Resources\Shaders\Unlit\shader.vert" />
       <EmbeddedResource Include="Resources\Shaders\Unlit\shader.vert" />
     </ItemGroup>
-
+    
 </Project>
