@@ -1,0 +1,125 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AssimpNet" Version="5.0.0-beta1" />
+      <PackageReference Include="FontStashSharp" Version="1.3.9" />
+      <PackageReference Include="Silk.NET.Assimp" Version="2.23.0" />
+      <PackageReference Include="Silk.NET.Input" Version="2.23.0" />
+      <PackageReference Include="Silk.NET.OpenGL" Version="2.23.0" />
+      <PackageReference Include="Silk.NET.OpenGL.Extensions.ImGui" Version="2.23.0" />
+      <PackageReference Include="Silk.NET.Windowing" Version="2.23.0" />
+      <PackageReference Include="StbImageSharp" Version="2.30.15" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="data\fonts\font.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\unlit\shader.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\unlit\shader.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\skybox\shader.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\skybox\shader.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\vignette.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\quad.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\quad\shader.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\shaders\quad\shader.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\hair_m_baseColor.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\hair_m_normal.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\pants_short_m_baseColor.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\pants_short_m_normal.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\skin_m.001_baseColor.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\skin_m.001_normal.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\sweather_shoes_gloves_m_baseColor.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\textures\sweather_shoes_gloves_m_normal.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\scene.bin">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\neighbor\scene.gltf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\terrain.glb">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\car.glb">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="data\models\ak_47.glb">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="data\textures\crate.png" />
+      <None Remove="data\textures\tex.png" />
+      <None Remove="data\textures\grid.png" />
+      <None Remove="data\textures\grass.jpg" />
+      <None Remove="data\shaders\phong\shader.frag" />
+      <EmbeddedResource Include="Resources\Shaders\Phong\shader.frag" />
+      <None Remove="data\shaders\phong\shader.vert" />
+      <EmbeddedResource Include="Resources\Shaders\Phong\shader.vert" />
+      <None Remove="icon.png" />
+      <None Remove="data\shaders\text\shader.frag" />
+      <EmbeddedResource Include="Resources\Shaders\Text\shader.frag" />
+      <None Remove="data\shaders\text\shader.vert" />
+      <EmbeddedResource Include="Resources\Shaders\Text\shader.vert" />
+      <None Remove="data\shaders\blit\shader.frag" />
+      <EmbeddedResource Include="Resources\Shaders\Blit\shader.frag" />
+      <None Remove="data\shaders\blit\shader.vert" />
+      <EmbeddedResource Include="Resources\Shaders\Blit\shader.vert" />
+      <None Remove="data\shaders\PBR\shader.frag" />
+      <EmbeddedResource Include="Resources\Shaders\PBR\shader.frag" />
+      <None Remove="data\shaders\PBR\shader.vert" />
+      <EmbeddedResource Include="Resources\Shaders\PBR\shader.vert" />
+      <None Remove="Resources\Shaders\Unlit\shader.frag" />
+      <EmbeddedResource Include="Resources\Shaders\Unlit\shader.frag" />
+      <None Remove="Resources\Shaders\Unlit\shader.vert" />
+      <EmbeddedResource Include="Resources\Shaders\Unlit\shader.vert" />
+    </ItemGroup>
+
+</Project>

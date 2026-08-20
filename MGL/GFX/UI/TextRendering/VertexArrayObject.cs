@@ -1,0 +1,39 @@
+﻿using System;
+using Silk.NET.OpenGL;
+
+namespace MGL.GFX.UI.TextRendering
+{
+	internal class VertexArrayObject: IDisposable
+	{
+		private readonly uint _handle;
+		private readonly int _stride;
+
+		public VertexArrayObject(int stride)
+		{
+			if (stride <= 0)
+			{
+				throw new ArgumentOutOfRangeException(nameof(stride));
+			}
+
+			_stride = stride;
+
+			Env.Gl.GenVertexArrays(1, out _handle);
+		}
+
+		public void Dispose()
+		{
+			Env.Gl.DeleteVertexArray(_handle);
+		}
+
+		public void Bind()
+		{
+			Env.Gl.BindVertexArray(_handle);
+		}
+
+		public unsafe void VertexAttribPointer(int location, int size, VertexAttribPointerType type, bool normalized, int offset)
+		{
+			Env.Gl.EnableVertexAttribArray((uint)location);
+			Env.Gl.VertexAttribPointer((uint)location, size, type, normalized, (uint)_stride, (void*)offset);
+		}
+	}
+}
