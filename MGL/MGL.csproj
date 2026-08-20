@@ -29,7 +29,6 @@
       <EmbeddedResource Include="Resources\Shaders\Phong\shader.frag" />
       <None Remove="data\shaders\phong\shader.vert" />
       <EmbeddedResource Include="Resources\Shaders\Phong\shader.vert" />
-      <None Remove="icon.png" />
       <None Remove="data\shaders\text\shader.frag" />
       <EmbeddedResource Include="Resources\Shaders\Text\shader.frag" />
       <None Remove="data\shaders\text\shader.vert" />
