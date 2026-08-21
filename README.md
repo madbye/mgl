@@ -15,3 +15,53 @@
 - **Post‑processing effects** – basic pipeline for screen-space effects.
 
 ---
+
+## 🕹️ Example
+
+```csharp
+using System.Drawing;
+using System.Numerics;
+using MGL;
+using MGL.GFX.Common;
+using MGL.GFX.Shaders;
+using MGL.GFX.Textures;
+using MGL.IO;
+using MGL.Utils;
+
+var window = new Window(1280, 720, "Window");
+window.Initialize();
+
+var vao = MeshGenerator.GenCube();
+var texture = Texture2D.FromImage(ImageLoader.GenCheckerboard(Color.Magenta, Color.Black, 8), TextureFilter.Nearest, false);
+
+var camera = new PerspectiveCamera(new(10), Quaternion.Identity, 1280, 720, 45, 0.1f, 1000);
+
+camera.LookAt(Vector3.Zero);
+
+RenderCommand.DepthTest = true;
+
+window.OnResize += (width, height) =>
+{
+    camera.Width = width;
+    camera.Height = height;
+};
+
+while (!window.ShouldClose())
+{
+    window.DoEvents();
+    
+    RenderCommand.ClearColor(Color.CornflowerBlue);
+    RenderCommand.ClearDepth();
+    
+    DefaultShaders.GetUnlit().Use();
+    DefaultShaders.GetUnlit().SetUniform("model", Matrix4x4.Identity);
+    camera.SetMatricesToProgram(DefaultShaders.GetUnlit());
+    
+    texture.Bind();
+    
+    vao.Draw();
+    
+    window.SwapBuffers();
+}
+
+```
